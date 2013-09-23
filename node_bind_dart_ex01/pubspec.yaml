@@ -1,0 +1,13 @@
+name: play_node_bind
+version: 0.0.1
+dependencies:
+  angular:
+    # git: git://github.com/angular/angular.dart
+    git: ../angular.dart
+  browser: any
+  js: any
+  mdv: any
+  observe: any
+  polymer: any
+  polymer_expressions: any
+  unittest: any

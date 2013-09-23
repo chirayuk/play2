@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script>
+    if (!navigator.webkitStartDart) {
+      alert("This example must be run in Dartium.");
+    }
+  </script>
+  <script src="packages/browser/dart.js"></script>
+  <script src="main.dart" type="application/dart"></script>
+  <title>play.node.bind</title>
+</head>
+<body class="container"><div class="row">
+  <i>View source on <a href="https://github.com/chirayuk/play2/tree/master/node_bind_dart_ex01">github</a></i>
+
+  <h3>Comparing the traditional way of two-way databinding to form control with Node.bind.</h3>
+
+  <div class="well span12">
+    <h5>Traditional method</h5>
+    <input type="range" ck-model="range1" ck-node-bind="0">
+    {{range1}}<br>
+  </div>
+
+  <div class="well span12">
+    <h5>Node.bind method</h5>
+    <input type="range" ck-model="range2" ck-node-bind="1">
+    {{range2}}<br>
+    Pros:
+    <ul>
+      <li>Can eliminate $watch / $digest for the binding</li>
+      <li>Will support CustomElements</li>
+    </ul>
+  </div>
+
+</div></body>
+</html>
