@@ -1,8 +1,21 @@
 See [**demo**](http://polymer_with_angular_dart_ex01.play2.ant.c-k.me/) 
 *(Requires the latest Dartium.)*
 
+
 ## Goal
 Consume a Polymer component in Angular.dart.
+
+
+## Requirements
+-   *latest Dartium* - v0.8.1+
+-   *patched Angular.Dart* that [changes](https://github.com/chirayuk/angular.dart/commit/f3033eb6fd68a6bd5f963f1e429ed6a1eef95cc5)
+    Angular's interpolation expressions from `{{`/`}}` to `«`/`»`.
+    -   get it from my branch <https://github.com/chirayuk/angular.dart/tree/alt_interpolation_symbols>
+    -   fyi, if you visit the [demo](http://polymer_with_angular_dart_ex01.play2.ant.c-k.me/),
+        you're automatically pulling in this version.  You
+        need it only if you want to run it locally by
+        cloning this repo.
+
 
 ## Notes
 - Bootstrapping issue

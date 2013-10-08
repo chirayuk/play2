@@ -22,22 +22,13 @@ class HelloWorldDirective {
                       Scope this.scope) {
     // Initial value with a capital C to distinguish the value set from Angular
     // from the value set in the Polymer initial binding.
+    print("CKCK: HelloWorldDirective: setting scope.username='Chirayu'");
     scope.username = "Chirayu";
     ckModel.render = (name) {
       element.name = name || "";
     };
 
+    print("CKCK: binding to 'name' on element $element[is=${attrs['is']}]");
     element.bind("name", ckModel, "viewValue");
   }
 }
-
-
-initializeAngularApp() {
-  mdv.initialize();
-  var module = new AngularModule()
-      ..directive(CkModel)
-      ..directive(HelloWorldDirective);
-  bootstrapAngular([module]);
-  print("ckck: Done bootstrap.");
-}
-

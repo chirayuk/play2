@@ -18,17 +18,21 @@
 <body ng-app class="container"><div class="row">
   <i>View source on <a href="https://github.com/chirayuk/play2/tree/master/polymer_with_angular_dart_ex01">github</a></i><hr><br>
 
+  <b>Custom Polymer element</b><div class="well">
   <template id="main_template" bind>
-    <div is="hello-world" name="{{user}}" ck-model="username"></div>
-    <!-- Two way data-binding is apparently busted.  Time down the drain. -->
-    <!-- Ref: http://code.google.com/p/dart/issues/detail?id=12440 -->
-    Bi-directional binding to user: {{user}}
-    (<i>This is busted. Ref: <a href="http://code.google.com/p/dart/issues/detail?id=12440">bug 12440</a></i>)
+      <div is="hello-world" name="{{user}}" ck-model="username"></div>
+
+      <!-- Polymer expression syntax -->
+      Bi-directional Polymer expression binding to user: <b>{{user}}</b>
+      (<i>This is busted (doesn't update) on 0.8.1.2_r28355 though <a href="http://code.google.com/p/dart/issues/detail?id=12440">bug 12440</a> says it's fixed on 0.8.1</i>)
+
   </template>
+  </div>
 
-  <div>Bi-directional binding to username: {{username}}</div>
+  <!-- Angular expression syntax-->
+  <div>Bi-directional Angular expression binding to username: <b>«username»</b></div>
 
-  <!-- Initialize the top level scope for polymer -->
+  <!-- Initialize the top level scope for Polymer -->
   <script type="application/dart" src="index.dart"></script>
 
   <!-- misc bugs-->

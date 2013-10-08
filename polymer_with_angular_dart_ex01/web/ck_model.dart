@@ -19,6 +19,7 @@ class CkModel extends Object with ChangeNotifierMixin {
   CkModel(Scope this._scope, NodeAttrs attrs);
 
   set model(BoundExpression boundExpression) {
+    print("CKCK: CkModel: Setting up Angular bidirectional binding to boundExpression");
     getter = boundExpression;
     setter = boundExpression.assign;
   }
@@ -28,11 +29,12 @@ class CkModel extends Object with ChangeNotifierMixin {
 
   get modelValue        => getter();
   set modelValue(value) {
+    print("CKCK: CkModel: changing modelValue: '${getter()}' → '$value'");
     setter(
         // We're an observable so fire a property change.
         notifyPropertyChange(const Symbol('modelValue'), getter(), value));
     // Let angular know something changed by forcing a digest.
-    // TODO(chirayu): Eliminate this $digest by making Angular understanding
+    // TODO(chirayu): Eliminate this $digest by making Angular understand
     // observables.
     _scope.$digest();
   }

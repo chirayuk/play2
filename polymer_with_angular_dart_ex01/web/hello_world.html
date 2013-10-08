@@ -1,4 +1,6 @@
 <polymer-element name="hello-world" attributes="name">
+  <!-- Not sure if removing attributes="name" and using @published requires a -->
+  <!-- compilation step.  I don't compile so I'm trying both. -->
   <template>
     <input type="text" value="{{name}}"></input>
     <p>You typed <b>"{{name}}"</b> in the input box.<p>
